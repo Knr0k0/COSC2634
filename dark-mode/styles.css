@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    width: 100vw; /* Đổi cái này thành giá trị khác */
+    height: 100vh; /* Đổi cái này thành giá trị khác */
+    display: flex; /* Đổi cái này thành giá trị khác */
+    flex-direction: column; /* Đổi cái này thành giá trị khác */
+    align-items: center; /* Đổi cái này thành giá trị khác */
+    justify-content: center; /* Đổi cái này thành giá trị khác */
+}
+label {
+    width: 500px; /* Đổi cái này thành giá trị khác */
+    height: 200px; /* Đổi cái này thành giá trị khác */
+    position: relative;
+    display: block;
+    background: white;
+    border-radius: 200px;
+    box-shadow: inset 0px 5px 15px grey, inset 0px -5px 15px grey;
+    cursor: pointer;
+    transition: 1s;
+}
+
+input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+input:checked + label {
+    background-color: black;
+}
+label:active:after {
+    width: 220px;
+    transition: 0.1s;
+}
+.background{
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: -1;
+    position: absolute;
+    transition: 1s;
+}
+input:checked + label +.background {
+    background: black;
+}
+label img{
+    position: absolute;
+    width: 120px;
+    top: 40px;
+    z-index: 100;
+}
+label img.lighton {
+    left: 40px;
+}
+label img.lightoff {
+    left: 340px;
+}
+@media (prefers-color-scheme: dark) {
+    body,
+    .background {
+      background-color: black;
+    }
+    label {
+      background-color: black;
+      border-radius: 200px;
+    }
+    label img.lighton {
+      left: 40px;
+    }
+    label img.lightoff {
+      left: 340px;
+    }
+  }
+  
+@media (prefers-color-scheme: light) {
+    body,
+    .background {
+      background-color: white;
+    }
+    label {
+      background-color: white;
+      border-radius: 200px;
+    }
+    label img.lighton {
+      left: 40px;
+    }
+    label img.lightoff {
+      left: 340px;
+    }
+  }
+  
